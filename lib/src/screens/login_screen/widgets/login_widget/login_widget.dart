@@ -14,9 +14,16 @@ class LoginWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: backgroundColor,
 
+    // final double screenWidth = MediaQuery.of(context).size.width;
+    // final double screenHeight = MediaQuery.of(context).size.height;
+
+    return Column(
+     children: const [
+      Text("Widget Login"),
+      // Text("Address"),
+      // Text("Password"),
+     ],
     );
   }
 }

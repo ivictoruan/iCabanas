@@ -6,15 +6,16 @@ class SingupWidget extends StatelessWidget {
   
   const SingupWidget(
     { Key? key,
-    this.foregroundColor: Colors.white,
-    this.backgroundColor: Colors.black,
+    this.foregroundColor = Colors.black,
+    this.backgroundColor = Colors.white,
     }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: backgroundColor,
-      
+    return Column(
+      children: const [
+        Text("Singup Widget"),
+      ],
     );
   }
 }

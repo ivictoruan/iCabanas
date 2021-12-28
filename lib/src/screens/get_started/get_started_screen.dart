@@ -7,6 +7,7 @@ class GetStartedScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     final double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
