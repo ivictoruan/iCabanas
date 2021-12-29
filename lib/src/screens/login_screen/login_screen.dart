@@ -10,24 +10,35 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final double _height = MediaQuery.of(context).size.height;
 
+    // detectando se o teclado está aberto:
+    final bool _isKeyboardOpen = MediaQuery.of(context).viewInsets.bottom > 0;
+
     return DefaultTabController(
       length: 2,
       child: Scaffold(
         backgroundColor: const Color(0xFFF2F2F2),
         appBar: AppBar(
           title: FractionallySizedBox(
-            widthFactor: 0.36,
+            widthFactor: 0.4,
             child: Image.asset("assets/images/logo.png")
             ),
           centerTitle: true,
           foregroundColor: Colors.black,
           backgroundColor: Colors.white,
-          toolbarHeight: _height * 0.4,
+
+          toolbarHeight: _isKeyboardOpen ? _height * 0.2 : _height * 0.4 ,
           shadowColor: const Color(0xFFE7E7E7),
           automaticallyImplyLeading: false,
           bottom: const TabBar(
-            indicatorColor: Color(0xFFFA4A0C),
-            indicatorSize: TabBarIndicatorSize.label,
+            // indicatorColor: Color(0xFFFA4A0C),
+            // indicatorSize: TabBarIndicatorSize.label,
+            indicator: UnderlineTabIndicator(
+              borderSide: BorderSide(
+                width: 2.0,
+                color: Color(0xFFFA4A0C),
+              ),
+              insets: EdgeInsets.symmetric(horizontal: 45.0),
+            ),
             tabs: [
               Tab(child: Text("Login", style: TextStyle(color: Colors.black))),
               Tab(child: Text("Sing-up", style: TextStyle(color: Colors.black))),
@@ -35,28 +46,16 @@ class LoginScreen extends StatelessWidget {
           ),
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(30),
-              bottomRight: Radius.circular(30),
+              bottomLeft: Radius.circular(40),
+              bottomRight: Radius.circular(40),
             )
           )
         ),
         body: const SafeArea(
-          child: TabBarView(children:[
+          child: TabBarView(children: [
             LoginWidget(), 
             SingupWidget(),
           ]),
-
-          // child: Column(
-          //   mainAxisAlignment: MainAxisAlignment.center,
-          //   crossAxisAlignment: CrossAxisAlignment.stretch,
-          //   children: [
-          //     ActionButton(
-          //       "Login",
-          //       onPressed: () => {
-          //         print("Botão de login presionado!")
-          //       } )
-          //   ],
-          // ),
         )
       ),
     );

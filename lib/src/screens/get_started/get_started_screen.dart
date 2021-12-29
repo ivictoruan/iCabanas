@@ -39,7 +39,7 @@ class GetStartedScreen extends StatelessWidget {
               ),
               const SizedBox(height: 15),
               Image.asset("assets/images/toy.png", width: screenWidth),
-              const SizedBox(height: 5),
+              
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
