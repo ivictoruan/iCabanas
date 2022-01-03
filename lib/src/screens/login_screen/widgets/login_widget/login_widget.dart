@@ -4,7 +4,7 @@ import 'package:icabannas/src/core/widgets/action_button.dart';
 import 'login_widget_controller.dart';
 
 class LoginWidget extends StatefulWidget {
-const LoginWidget({ Key? key,}) : super(key: key);
+  const LoginWidget({ Key? key,}) : super(key: key);
 
 
   @override

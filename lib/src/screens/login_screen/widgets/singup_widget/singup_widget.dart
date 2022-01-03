@@ -1,21 +1,15 @@
 import 'package:flutter/material.dart';
 
-class SingupWidget extends StatelessWidget {
-  final Color foregroundColor;
-  final Color backgroundColor;
-  
-  const SingupWidget(
-    { Key? key,
-    this.foregroundColor = Colors.black,
-    this.backgroundColor = Colors.white,
-    }) : super(key: key);
+class SingupWidget extends StatefulWidget {
+  const SingupWidget({Key? key}) : super(key: key);
 
   @override
+  _SingupWidgetState createState() => _SingupWidgetState();
+}
+
+class _SingupWidgetState extends State<SingupWidget> {
+  @override
   Widget build(BuildContext context) {
-    return Column(
-      children: const [
-        Text("Singup Widget"),
-      ],
-    );
+    return Container();
   }
 }
