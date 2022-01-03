@@ -38,7 +38,7 @@ class ICabannasApp
           ),
           subtitle1: TextStyle(
             fontFamily: "SFPro",
-            fontSize: 16,
+            fontSize: 20,
             fontWeight: FontWeight.w800,
             color: Color(0xFF000000),
             decoration: TextDecoration.none,
@@ -60,7 +60,7 @@ class ICabannasApp
         inputDecorationTheme: const InputDecorationTheme(
           labelStyle: TextStyle(
             fontFamily: "SFPro",
-            fontSize: 17,
+            fontSize: 19,
             fontWeight: FontWeight.w600,
             color: Color(0xFF919191)),
           enabledBorder: UnderlineInputBorder(

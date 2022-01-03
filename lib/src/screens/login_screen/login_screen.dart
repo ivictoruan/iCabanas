@@ -26,7 +26,7 @@ class LoginScreen extends StatelessWidget {
           foregroundColor: Colors.black,
           backgroundColor: Colors.white,
 
-          toolbarHeight: _isKeyboardOpen ? null : _height * 0.4 ,
+          toolbarHeight: _isKeyboardOpen ? null : _height * 0.3 ,
           shadowColor: const Color(0xFFE7E7E7),
           automaticallyImplyLeading: false,
           bottom: const TabBar(

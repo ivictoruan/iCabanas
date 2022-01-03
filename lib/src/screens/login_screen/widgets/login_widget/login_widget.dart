@@ -88,7 +88,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                 style: TextStyle(
                   color: Color(0xFFFA4A0C),
                   fontWeight: FontWeight.w600,
-                  fontSize: 15,
+                  fontSize: 17,
                 ),
               ),
             ),
@@ -98,8 +98,10 @@ class _LoginWidgetState extends State<LoginWidget> {
               style: const TextStyle(
                 color: Colors.red,
                 fontWeight: FontWeight.bold,
+
               ),
             ),
+            const SizedBox(height: 40),
             ActionButton(
               "Login",
               backgroundColor: const Color(0xFFFF460A),
