@@ -18,7 +18,7 @@ class LoginScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: const Color(0xFFF2F2F2),
         appBar: AppBar(
-          title: FractionallySizedBox(
+          title: _isKeyboardOpen ? const Text("iCabanãs") : FractionallySizedBox(
             widthFactor: 0.4,
             child: Image.asset("assets/images/logo.png")
             ),
@@ -26,7 +26,7 @@ class LoginScreen extends StatelessWidget {
           foregroundColor: Colors.black,
           backgroundColor: Colors.white,
 
-          toolbarHeight: _isKeyboardOpen ? _height * 0.2 : _height * 0.4 ,
+          toolbarHeight: _isKeyboardOpen ? null : _height * 0.4 ,
           shadowColor: const Color(0xFFE7E7E7),
           automaticallyImplyLeading: false,
           bottom: const TabBar(

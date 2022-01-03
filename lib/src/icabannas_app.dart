@@ -18,20 +18,55 @@ class ICabannasApp
         "/login":(context) => const LoginScreen(),
       },
       theme: ThemeData(
+        
         primaryColor: const Color(0xFFFA4A0C),
+        
         textTheme: const TextTheme(
           headline1: TextStyle(
             fontFamily: "SFPro",
             fontSize: 62,
             height: 0.8,
-            // fontWeight: FontWeight.w800,
+            fontWeight: FontWeight.w800,
             color: Color(0xFFF6F6F9)
           ),
           button: TextStyle(
             fontFamily: "SFPro",
             fontSize: 17,
-            color: Color(0xFFFF4B3A)
+            fontWeight: FontWeight.w600,
+            color: Color(0xFFF6F6F9),
+            // color: Color(0xFFFF4B3A)
           ),
+          subtitle1: TextStyle(
+            fontFamily: "SFPro",
+            fontSize: 16,
+            fontWeight: FontWeight.w800,
+            color: Color(0xFF000000),
+            decoration: TextDecoration.none,
+          ),
+        ),
+        //selecionando cores para os cursores
+        textSelectionTheme: const TextSelectionThemeData(
+          cursorColor: Color(0xFFFA4A0C),
+          selectionColor: Color(0xFFFA4A0C),
+          selectionHandleColor: Color(0xFFFA4A0C),
+        ),
+        //Removendo padding do Button
+        textButtonTheme: TextButtonThemeData(
+          style: TextButton.styleFrom(
+            padding: const EdgeInsets.all(0),
+          ),
+        ),
+        //incluindo tema dos labels das caixas de texto do app
+        inputDecorationTheme: const InputDecorationTheme(
+          labelStyle: TextStyle(
+            fontFamily: "SFPro",
+            fontSize: 17,
+            fontWeight: FontWeight.w600,
+            color: Color(0xFF919191)),
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFF000000))),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xFFFA4A0C))), 
         ),
       ),
     );

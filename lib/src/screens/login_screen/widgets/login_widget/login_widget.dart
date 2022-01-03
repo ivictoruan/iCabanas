@@ -24,23 +24,17 @@ class _LoginWidgetState extends State<LoginWidget> {
 
   @override
   void initState(){
-
     super.initState();
-  
     _emailTextController.addListener(() => {
       _email = _emailTextController.text,
       print(_email),
-      
       }
     );
-
-
     _passwordTextController.addListener(() => _password = _passwordTextController.text);
   }
 
   @override
   void dispose(){
-
     super.dispose();
 
     _emailTextController.dispose();
@@ -57,7 +51,6 @@ class _LoginWidgetState extends State<LoginWidget> {
     } else {
       print("Login Error!");
     }
-
   }
 
   @override
