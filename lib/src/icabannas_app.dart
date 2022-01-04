@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:icabannas/src/screens/login_screen/login_screen.dart';
 
 import 'screens/get_started/get_started_screen.dart';
+import 'screens/home_screen/home_screen.dart';
 
 class ICabannasApp
  extends StatelessWidget {
@@ -16,6 +17,7 @@ class ICabannasApp
       routes:{
         "/":(context) => const GetStartedScreen(),
         "/login":(context) => const LoginScreen(),
+        "/home":(context) => const HomeScreen(),
       },
       theme: ThemeData(
         

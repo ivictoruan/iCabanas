@@ -21,11 +21,10 @@ class ActionButton extends StatelessWidget {
     return TextButton(
       onPressed: onPressed, // método
        child: Container(
-         padding: EdgeInsets.symmetric(vertical: 15, horizontal: _screenWidth * 0.35  ),
+         padding: EdgeInsets.symmetric(vertical: 14, horizontal: _screenWidth * 0.25  ),
          decoration: BoxDecoration( 
            borderRadius: BorderRadius.circular(15), 
-           color: backgroundColor,
-          //  shape: 
+           color: backgroundColor,          
            ), 
          child: Text(
            text, 

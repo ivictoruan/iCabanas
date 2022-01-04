@@ -43,13 +43,20 @@ class _LoginWidgetState extends State<LoginWidget> {
   }
 
   void doLogin(){
-    if(_controller.login(_email, _password)) {
+    if(_controller.login(_email, _password)) {      
       setState(() {
         _msgError = "";
       });
-      print("Login was realized with success");
+
+      // print("Login was realized with success");
+      Navigator.pushReplacementNamed(context, "/home");
+
     } else {
-      print("Login Error!");
+       setState(() {
+        _msgError = "Erro na autenticação!";
+      });
+
+      // print("Login Error!");
     }
   }
 
@@ -101,11 +108,17 @@ class _LoginWidgetState extends State<LoginWidget> {
 
               ),
             ),
-            const SizedBox(height: 40),
-            ActionButton(
-              "Login",
-              backgroundColor: const Color(0xFFFF460A),
-              onPressed: () => doLogin
+            const SizedBox(height: 50),
+            Row(
+              children: [
+                Expanded(
+                  child: ActionButton(
+                    "Login",
+                    backgroundColor: const Color(0xFFFF460A),
+                    onPressed: () => doLogin(),
+                  ),
+                ),
+              ],
             ),
            ], // children
         )

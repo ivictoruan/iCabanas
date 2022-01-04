@@ -48,15 +48,15 @@ class GetStartedScreen extends StatelessWidget {
                     backgroundColor: Colors.white,
                     foregroundColor: const Color(0xFFFF460A),
                     onPressed: () => {
-                     Navigator.pushReplacementNamed(context, "/login")
+                    Navigator.pushReplacementNamed(context, "/login")
                       },                               
                   ),
                 ],
               ),
-              // const SizedBox(height: 1),
+              const SizedBox(height: 10),
             ],
         ),
-          )
+      )
         
       ), 
     );
