@@ -3,10 +3,10 @@ class SingupWidgetController {
    
    print(">>> $name, $email e $password");
    
-   if(name =="Victor" && email=="victorruan@gmail.com" && password=="135algumacoisa"){
-     return true;
-   } else{
+   if(name =="" && email=="" && password==""){
      return false;
+   } else{
+     return true;
    }
  }
 }

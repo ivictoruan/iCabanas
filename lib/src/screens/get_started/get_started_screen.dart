@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:icabannas/src/core/widgets/action_button.dart';
 
-
 class GetStartedScreen extends StatelessWidget {
   const GetStartedScreen({ Key? key }) : super(key: key);
 
@@ -22,14 +21,14 @@ class GetStartedScreen extends StatelessWidget {
                 padding: EdgeInsets.only(left: screenWidth * 0.12),
                 child: CircleAvatar(
                   backgroundColor: Colors.white,
-                  radius:37,
+                  radius:30,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Image.asset("assets/images/logo.png"),
                   ),            
                 ),
               ),
-              const SizedBox(height: 40),
+              // const SizedBox(height: 10),
               Padding(
                 padding: EdgeInsets.only(left: screenWidth * 0.12),
                 child: Text(
@@ -37,8 +36,9 @@ class GetStartedScreen extends StatelessWidget {
                   style: Theme.of(context).textTheme.headline1,
                 ),
               ),
-              const SizedBox(height: 15),
-              Image.asset("assets/images/toy.png", width: screenWidth),
+              // const SizedBox(height: 15),
+              
+              Image.asset("assets/images/toy.png", width: screenWidth),              
               
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

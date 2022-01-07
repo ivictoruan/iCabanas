@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// import 'package:icabannas/src/core/widgets/action_button.dart';
 import 'package:icabannas/src/screens/login_screen/widgets/login_widget/login_widget.dart';
 import 'package:icabannas/src/screens/login_screen/widgets/singup_widget/singup_widget.dart';
 
@@ -30,8 +29,6 @@ class LoginScreen extends StatelessWidget {
           shadowColor: const Color(0xFFE7E7E7),
           automaticallyImplyLeading: false,
           bottom: const TabBar(
-            // indicatorColor: Color(0xFFFA4A0C),
-            // indicatorSize: TabBarIndicatorSize.label,
             indicator: UnderlineTabIndicator(
               borderSide: BorderSide(
                 width: 2.0,

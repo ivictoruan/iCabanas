@@ -47,11 +47,12 @@ class _SingupWidgetState extends State<SingupWidget> {
         _msgError = "";
       });
       print("Singup was realized with success");
-      Navigator.pushReplacementNamed(context, "/home_screen");
+      Navigator.pushReplacementNamed(context, "/home");
 
     }else{
-      print("Singup Error!");
-    }
+      setState(() {
+              _msgError = "Sing-up Error. Try Again!";
+            });    }
   }
 
 
@@ -109,7 +110,7 @@ class _SingupWidgetState extends State<SingupWidget> {
                   child: ActionButton(
                     "Singup",
                     backgroundColor: const Color(0xFFFF460A),
-                    onPressed: () => doSingup                                  
+                    onPressed: () => doSingup()                                  
                   ),                                 
                 ),
               ],

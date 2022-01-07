@@ -53,7 +53,7 @@ class _LoginWidgetState extends State<LoginWidget> {
 
     } else {
        setState(() {
-        _msgError = "Erro na autenticação!";
+        _msgError = "Authentication error";
       });
 
       // print("Login Error!");

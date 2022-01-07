@@ -26,8 +26,8 @@ class ICabannasApp
         textTheme: const TextTheme(
           headline1: TextStyle(
             fontFamily: "SFPro",
-            fontSize: 62,
-            height: 0.8,
+            fontSize: 50,
+            height: 1,
             fontWeight: FontWeight.w800,
             color: Color(0xFFF6F6F9)
           ),
