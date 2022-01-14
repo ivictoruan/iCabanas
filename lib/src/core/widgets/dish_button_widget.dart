@@ -35,7 +35,7 @@ class DishButtonWidget extends StatelessWidget {
         onTap: onPressed,
         child: Padding(
           // espaçamento horizontal entre os elementos
-          padding: const EdgeInsets.symmetric(horizontal: 48.0),
+          padding: const EdgeInsets.symmetric(horizontal: 12.0),
           child: AspectRatio(
             aspectRatio: aspectRatio,
             child: Stack(
@@ -73,10 +73,10 @@ class DishButtonWidget extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.only(top: _maxHeight * 0.05),
                     child: FractionallySizedBox(
-                      widthFactor: 1.2,
+                      widthFactor: .8,
                       alignment: Alignment.center,
                       child: Image.asset(
-                        'assets/images/$_dishImage.png',
+                        'assets/images/dishs/$_dishImage.png',
                         fit: BoxFit.cover,
                       ),
                     ),

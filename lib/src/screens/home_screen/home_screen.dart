@@ -1,41 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:icabannas/src/core/widgets/dish_button_widget.dart';
 
-
+  
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFFF2F2F2),
-      // faz com que o corpo da tela ocupe o espaço da app bar também
-      // extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        // botem os botões de ação na app bar, conforme o template
-        title: const Text(
-          'Home',
-          style: TextStyle(color: Colors.black),
+    return DefaultTabController(
+      length: 4,
+      child: Scaffold(
+        backgroundColor: const Color(0xFFF2F2F2),
+        // faz com que o corpo da tela ocupe o espaço da app bar também
+        // extendBodyBehindAppBar: true,
+        appBar: AppBar(
+          // deixa a app bar transparente
+          backgroundColor: Colors.transparent,
+          // some com a sombra (já que não tem elevação)
+          elevation: 0,
+          leading: IconButton(
+            onPressed: () => {}, 
+            icon: const Icon(Icons.menu, color:Colors.black),
+          ),
+          actions: [
+            IconButton(
+              onPressed: () => {},
+               icon: const Icon(Icons.shopping_cart_outlined, color: Colors.black26) 
+            ),
+          ],                    
         ),
-        centerTitle: true,
-        // deixa a app bar transparente
-        backgroundColor: Colors.transparent,
-        // some com a sombra (já que não tem elevação)
-        elevation: 0,
-      ),
-      body: SingleChildScrollView(
-        child: Column(
+         body: TabBarView(
           children: [
-            // exemplo de widget que ocupa um espaço na tela
-            // Container(
-            //   color: Colors.red,
-            //   child: const SizedBox(
-            //     height: 100,
-            //     child: Center(
-            //       child: Text("Home page"),
-            //     ),
-            //   ),
-            // ),
             ConstrainedBox(
               constraints: const BoxConstraints(maxHeight: 250),
               child: ListView(
@@ -68,9 +63,64 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
-            )
+            ),                                  
+            Column(
+              children: const [
+                Icon(Icons.favorite),
+                Text("No Favorites yet",) 
+              ]
+            ),
+            Column(
+              children: const [
+                Icon(Icons.person),
+                Text("Build a screen to the profile here!",) 
+              ]
+            ),
+            Column(
+              children: const [
+                Icon(Icons.calendar_today),
+                Text("No history yet",) 
+              ]
+            ),
           ],
         ),
+        bottomNavigationBar: PreferredSize(
+          preferredSize: Size(
+            MediaQuery.of(context).size.width * 0.6,
+            MediaQuery.of(context).size.width * 0.2,
+          ), 
+          child: SizedBox(
+            width: MediaQuery.of(context).size.width * 0.6,
+            height: MediaQuery.of(context).size.width * 0.2,
+            child: Theme(
+              data: ThemeData(
+                splashColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+              ),
+              child: const TabBar(
+                indicator: BoxDecoration(
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color(0x33FA4A0C),
+                      blurRadius: 10.0,
+                      spreadRadius: 0.1,
+                    ),
+                  ],
+                ),
+                indicatorSize: TabBarIndicatorSize.label,
+                tabs: [
+                  Tab(icon: Icon(Icons.home, size: 35)),
+                  Tab(icon: Icon(Icons.favorite_border, size: 35)),
+                  Tab(icon: Icon(Icons.person_outline, size: 35)),
+                  Tab(icon: Icon(Icons.restore, size: 35)),
+                ],
+                labelColor: Color(0xFFFA4A0C),
+                unselectedLabelColor: Color(0xFFADADAF),
+              ),
+            ),
+          ),
+      ),
       ),
     );
   }

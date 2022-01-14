@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:icabannas/src/core/widgets/action_button.dart';
 import 'package:icabannas/src/screens/login_screen/widgets/singup_widget/singup_widget_controller.dart';
