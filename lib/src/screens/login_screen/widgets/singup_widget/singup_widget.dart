@@ -44,7 +44,7 @@ class _SingupWidgetState extends State<SingupWidget> {
       setState(() {
         _msgError = "";
       });
-      print("Singup was realized with success");
+      debugPrint("Singup was realized with success");
       Navigator.pushReplacementNamed(context, "/home");
 
     }else{

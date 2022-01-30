@@ -30,7 +30,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
               width: maxWidth * 0.28,
               child: IconButton(
                 onPressed: onCartPressed,
-                icon: const Icon(Icons.shopping_cart_outlined, color: Colors.black26) 
+                icon: const Icon(Icons.shopping_cart_outlined, color: Colors.black) 
               ),
             ),
           ],

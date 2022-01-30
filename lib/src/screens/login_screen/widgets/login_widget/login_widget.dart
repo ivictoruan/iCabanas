@@ -27,7 +27,7 @@ class _LoginWidgetState extends State<LoginWidget> {
     super.initState();
     _emailTextController.addListener(() => {
       _email = _emailTextController.text,
-      print(_email),
+      debugPrint(_email),
       }
     );
     _passwordTextController.addListener(() => _password = _passwordTextController.text);
@@ -54,10 +54,9 @@ class _LoginWidgetState extends State<LoginWidget> {
     } else {
        setState(() {
         _msgError = "Authentication error";
-        print("eero aq");
       });
 
-      print("Login Error!");
+      debugPrint("Login Error!");
     }
   }
 
