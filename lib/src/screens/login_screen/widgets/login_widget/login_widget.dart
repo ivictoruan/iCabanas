@@ -54,9 +54,10 @@ class _LoginWidgetState extends State<LoginWidget> {
     } else {
        setState(() {
         _msgError = "Authentication error";
+        print("eero aq");
       });
 
-      // print("Login Error!");
+      print("Login Error!");
     }
   }
 
@@ -115,7 +116,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                   child: ActionButton(
                     "Login",
                     backgroundColor: const Color(0xFFFF460A),
-                    onPressed: () => doLogin(),
+                    onPressed: doLogin,
                   ),
                 ),
               ],

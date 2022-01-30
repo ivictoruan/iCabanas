@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:icabannas/src/core/widgets/dish_button_widget.dart';
+import 'package:icabannas/src/screens/home_screen/widgets/app_bar_widget.dart';
+
+
 
   
 class HomeScreen extends StatelessWidget {
@@ -13,21 +16,10 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: const Color(0xFFF2F2F2),
         // faz com que o corpo da tela ocupe o espaço da app bar também
         // extendBodyBehindAppBar: true,
-        appBar: AppBar(
-          // deixa a app bar transparente
-          backgroundColor: Colors.transparent,
-          // some com a sombra (já que não tem elevação)
-          elevation: 0,
-          leading: IconButton(
-            onPressed: () => {}, 
-            icon: const Icon(Icons.menu, color:Colors.black),
-          ),
-          actions: [
-            IconButton(
-              onPressed: () => {},
-               icon: const Icon(Icons.shopping_cart_outlined, color: Colors.black26) 
-            ),
-          ],                    
+        appBar: AppBarWidget(
+          maxWidth: MediaQuery.of(context).size.width,
+          onMenuPressed: () => debugPrint('Drawer'),
+          onCartPressed: () => debugPrint('Cart'),
         ),
          body: TabBarView(
           children: [

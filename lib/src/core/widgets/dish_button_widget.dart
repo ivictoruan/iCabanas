@@ -30,7 +30,8 @@ class DishButtonWidget extends StatelessWidget {
       // altura máxima disponivel pro componente
       double _maxHeight = contraints.maxHeight;
 
-      // Inkwell para responder ao toque
+      // Inkwell para responder ao
+      // toque
       return InkWell(
         onTap: onPressed,
         child: Padding(
@@ -129,3 +130,4 @@ class DishButtonWidget extends StatelessWidget {
     });
   }
 }
+

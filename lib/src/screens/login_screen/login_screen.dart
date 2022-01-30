@@ -15,6 +15,7 @@ class LoginScreen extends StatelessWidget {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: const Color(0xFFF2F2F2),
         appBar: AppBar(
           title: _isKeyboardOpen ? const Text("iCabanãs") : FractionallySizedBox(
