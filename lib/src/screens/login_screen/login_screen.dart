@@ -20,7 +20,7 @@ class LoginScreen extends StatelessWidget {
         appBar: AppBar(
           title: _isKeyboardOpen ? const Text("iCabanãs") : FractionallySizedBox(
             widthFactor: 0.4,
-            child: Image.asset("assets/images/logo.png")
+            child: Image.asset("images/logo.png")
             ),
           centerTitle: true,
           foregroundColor: Colors.black,

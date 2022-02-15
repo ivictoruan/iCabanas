@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:icabannas/src/core/model/dish.dart';
+import 'package:icabannas/src/core/widgets/dish_button_widget.dart';
 
 class DishesMenuWidget extends StatelessWidget {
-  const DishesMenuWidget({ Key? key }) : super(key: key);
+  final List<Dish> dataDishes; // lista que recebe os pratos
+  const DishesMenuWidget({ 
+    Key? key,
+    required this.dataDishes 
+    }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +39,65 @@ class DishesMenuWidget extends StatelessWidget {
                   Tab(text: "Sauce"),
                 ],
               ),
+            ),
+            Container(
+              margin: EdgeInsets.only(
+                top: _maxHeight * 0.02,
+                bottom: _maxHeight * 0.06,
+                ),
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  maxHeight: _maxHeight * 0.68,
+                  ),
+                child: TabBarView(
+                  children: [
+                    ListView.separated(
+                      padding: EdgeInsets.symmetric(vertical: _maxHeight * 0.02),
+                      scrollDirection: Axis.horizontal, // testar dps em vertical
+                      clipBehavior: Clip.none,
+                      itemBuilder: (_, item) {
+                        return DishButtonWidget(
+                          dishName: dataDishes[item].dishName,
+                          dishPrice: dataDishes[item].dishPrice, 
+                          dishImage: dataDishes[item].dishImage,
+
+                          onPressed: () => debugPrint(
+                            "Prato clicado: ${dataDishes[item].dishImage}" // mudar para dishName
+                            ),
+                          );
+                      },
+                      separatorBuilder: (_, __) => const SizedBox(
+                        width: 5,
+                        ),
+                      itemCount: dataDishes.length,    
+                    ),
+                    Center(
+                      child: Text(
+                        "Drinks",
+                        style: Theme.of(context)
+                          .textTheme
+                          .headline1
+                          ?.copyWith(color: Colors.black)),
+                      ),
+                    Center(
+                      child: Text(
+                        "Snacks",
+                        style: Theme.of(context)
+                          .textTheme
+                          .headline1
+                          ?.copyWith(color: Colors.black)),
+                      ),
+                    Center(
+                      child: Text(
+                        "Sauce",
+                        style: Theme.of(context)
+                          .textTheme
+                          .headline1
+                          ?.copyWith(color: Colors.black)),
+                      ),                                                                      
+                  ],
+                ),  
+            ),
             ),
           ],
         );

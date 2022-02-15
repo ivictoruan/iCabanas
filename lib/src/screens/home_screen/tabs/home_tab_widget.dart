@@ -1,13 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:icabannas/src/core/model/dish.dart';
+import 'package:icabannas/src/screens/home_screen/widgets/dishes_menu_widgets.dart';
 
 class HomeTabWidget extends StatefulWidget {
-  const HomeTabWidget({ Key? key }) : super(key: key);
+  final List<Dish> dataDishes;
+  const HomeTabWidget({ 
+    Key? key, 
+    required this.dataDishes, 
+     
+    }) : super(key: key);
 
   @override
   _HomeTabWidgetState createState() => _HomeTabWidgetState();
 }
 
 class _HomeTabWidgetState extends State<HomeTabWidget> {
+  List<Dish> _filteredDishes = [];
+
+  @override  
+  void initState() {
+    super.initState();
+    _filteredDishes = [...widget.dataDishes];
+  }
+
+  
   @override
   Widget build(BuildContext context) {
     final _maxWidth = MediaQuery.of(context).size.width;
@@ -29,6 +45,12 @@ class _HomeTabWidgetState extends State<HomeTabWidget> {
               height: 1.2,
             ),
           ),
+        
+        Expanded(
+          child: DishesMenuWidget(            
+            dataDishes: _filteredDishes,
+          ),
+        ),
         ],
       ),
 

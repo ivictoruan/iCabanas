@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class DishButtonWidget extends StatelessWidget {
   final VoidCallback onPressed;
   final String dishName;
-  late final String _dishImage;
+  // late final String _dishImage;
+  final String dishImage;
   final String dishPrice;
   final double aspectRatio;
 
@@ -11,16 +12,14 @@ class DishButtonWidget extends StatelessWidget {
     Key? key,
     required this.dishName,
     required this.dishPrice,
-    String? dishImage,
+    required this.dishImage,
     this.aspectRatio = 220 / 321, // do template
     required this.onPressed,
+
   }) : super(key: key) {
-    // se nao for informado nenhum nome de imagem, use a padrão
-    if (dishImage == null) {
-      _dishImage = 'veggie_tomato';
-    } else {
-      _dishImage = dishImage;
-    }
+   
+      // _dishImage = dishImage?? '/veggie_tomato';
+    
   }
 
   @override
@@ -77,7 +76,7 @@ class DishButtonWidget extends StatelessWidget {
                       widthFactor: .8,
                       alignment: Alignment.center,
                       child: Image.asset(
-                        'assets/images/dishs/$_dishImage.png',
+                        'images/dishs/$dishImage.png',
                         fit: BoxFit.cover,
                       ),
                     ),

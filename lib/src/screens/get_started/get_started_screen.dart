@@ -18,17 +18,16 @@ class GetStartedScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsets.only(left: screenWidth * 0.12),
+                padding: EdgeInsets.only(left: screenWidth * 0.10),
                 child: CircleAvatar(
                   backgroundColor: Colors.white,
                   radius:30,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Image.asset("assets/images/logo.png"),
+                    child: Image.asset("images/logo.png"),
                   ),            
                 ),
               ),
-              // const SizedBox(height: 10),
               Padding(
                 padding: EdgeInsets.only(left: screenWidth * 0.12),
                 child: Text(
@@ -36,9 +35,8 @@ class GetStartedScreen extends StatelessWidget {
                   style: Theme.of(context).textTheme.headline1,
                 ),
               ),
-              // const SizedBox(height: 15),
               
-              Image.asset("assets/images/toy.png", width: screenWidth),              
+              Image.asset("images/toy.png", width: screenWidth),              
               
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -53,7 +51,7 @@ class GetStartedScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 10),
+              // const SizedBox(height: 10),
             ],
         ),
       )

@@ -12,8 +12,10 @@ class MenuModel extends ChangeNotifier{
   // }
 
   List<Dish> get menu => List.unmodifiable(_menu);
+  
   void addDish(Dish dish){
     _menu.add(dish);
     notifyListeners();
   }
+
 }

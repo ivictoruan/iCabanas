@@ -17,7 +17,7 @@ class ICabannasApp
       routes:{
         "/":(context) => const GetStartedScreen(),
         "/login":(context) => const LoginScreen(),
-        "/home":(context) => const HomeScreen(),
+        "/home":(context) => HomeScreen(),
       },
       theme: ThemeData(
         
