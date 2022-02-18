@@ -3,7 +3,7 @@ import 'package:icabannas/src/screens/login_screen/widgets/login_widget/login_wi
 import 'package:icabannas/src/screens/login_screen/widgets/singup_widget/singup_widget.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({ Key? key }) : super(key: key);
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,43 +18,55 @@ class LoginScreen extends StatelessWidget {
         resizeToAvoidBottomInset: false,
         backgroundColor: const Color(0xFFF2F2F2),
         appBar: AppBar(
-          title: _isKeyboardOpen ? const Text("iCabanãs") : FractionallySizedBox(
-            widthFactor: 0.4,
-            child: Image.asset("images/logo.png")
-            ),
+          title: _isKeyboardOpen
+              ? const Text("Padaria Marianã")
+              : FractionallySizedBox(
+                  widthFactor: 0.4,
+                  child: Image.asset("assets/images/logo.png"),
+                ),
           centerTitle: true,
           foregroundColor: Colors.black,
           backgroundColor: Colors.white,
-
-          toolbarHeight: _isKeyboardOpen ? null : _height * 0.3 ,
+          toolbarHeight: _isKeyboardOpen ? null : _height * 0.3,
           shadowColor: const Color(0xFFE7E7E7),
           automaticallyImplyLeading: false,
           bottom: const TabBar(
-            indicator: UnderlineTabIndicator(
-              borderSide: BorderSide(
-                width: 2.0,
-                color: Color(0xFFFA4A0C),
+              indicator: UnderlineTabIndicator(
+                borderSide: BorderSide(
+                  width: 2.0,
+                  color: Color(0xFFFA4A0C),
+                ),
+                insets: EdgeInsets.symmetric(horizontal: 45.0),
               ),
-              insets: EdgeInsets.symmetric(horizontal: 45.0),
-            ),
-            tabs: [
-              Tab(child: Text("Login", style: TextStyle(color: Colors.black))),
-              Tab(child: Text("Sing-up", style: TextStyle(color: Colors.black))),
-            ]
-          ),
+              tabs: [
+                Tab(
+                  child: Text(
+                    "Logar",
+                    style: TextStyle(
+                        color: Colors.black87, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Tab(
+                  child: Text(
+                    "Inscrever-se",
+                    style: TextStyle(
+                        color: Colors.black87, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ]),
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(40),
               bottomRight: Radius.circular(40),
-            )
-          )
+            ),
+          ),
         ),
         body: const SafeArea(
           child: TabBarView(children: [
-            LoginWidget(), 
+            LoginWidget(),
             SingupWidget(),
           ]),
-        )
+        ),
       ),
     );
   }

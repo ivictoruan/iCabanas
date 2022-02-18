@@ -17,32 +17,41 @@ class GetStartedScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
+              Row(
+                children: [
+                  Padding(
                 padding: EdgeInsets.only(left: screenWidth * 0.10),
                 child: CircleAvatar(
                   backgroundColor: Colors.white,
-                  radius:30,
+                  radius:40,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Image.asset("images/logo.png"),
+                    child: Image.asset("assets/images/logo.png"),
                   ),            
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.only(left: screenWidth * 0.12),
-                child: Text(
-                  "Food for Everyone",
-                  style: Theme.of(context).textTheme.headline1,
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Text(
+                    "Seja bem-vindo!",
+                    style: Theme.of(context).textTheme.headline1,
+                  ),
                 ),
               ),
+
+                ],
+              ),
               
-              Image.asset("images/toy.png", width: screenWidth),              
+              
+              
+              Image.asset("assets/images/toy.png", width: screenWidth),
               
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ActionButton(
-                    "Get Started",
+                    "Começe Aqui",
                     backgroundColor: Colors.white,
                     foregroundColor: const Color(0xFFFF460A),
                     onPressed: () => {

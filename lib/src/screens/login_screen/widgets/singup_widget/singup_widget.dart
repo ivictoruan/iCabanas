@@ -22,63 +22,63 @@ class _SingupWidgetState extends State<SingupWidget> {
 
   String _msgError = "";
 
-
   @override
-  void initState(){
+  void initState() {
     super.initState();
     _nameTextController.addListener(() => _name = _nameTextController.text);
     _emailTextController.addListener(() => _name = _emailTextController.text);
-    _passwordTextController.addListener(() => _name = _passwordTextController.text);
+    _passwordTextController
+        .addListener(() => _name = _passwordTextController.text);
   }
 
   @override
-  void dispose(){
+  void dispose() {
     super.dispose();
     _nameTextController.dispose();
     _emailTextController.dispose();
     _passwordTextController.dispose();
   }
 
-  void doSingup(){
-    if(_controller.singup(_name, _email, _password)){
+  void doSingup() {
+    if (_controller.singup(_name, _email, _password)) {
       setState(() {
         _msgError = "";
       });
       debugPrint("Singup was realized with success");
       Navigator.pushReplacementNamed(context, "/home");
-
-    }else{
+    } else {
       setState(() {
-              _msgError = "Sing-up Error. Try Again!";
-            });    }
+        _msgError = "Erro ao realizar o cadastro, tente novamente!";
+      });
+    }
   }
 
-
-   @override
+  @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.only(top: 40, left: 40, right:40),
+        padding: const EdgeInsets.only(top: 40, left: 40, right: 40),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start, // isto é necessário?
           children: [
             TextField(
-              onChanged: (value) => _name = value,
-              autocorrect: false,
-              enableSuggestions: false, 
-              // keyboardType: TextInpu,Type.
-              decoration: const InputDecoration(
-                labelText: "Name",
-                floatingLabelBehavior: FloatingLabelBehavior.always,
-              )
-            ),
+                onChanged: (value) => _name = value,
+                autocorrect: false,
+                enableSuggestions: false,
+                keyboardType: TextInputType.text,
+                decoration: const InputDecoration(
+                  icon: Icon(Icons.person),
+                  labelText: "Nome",
+                  floatingLabelBehavior: FloatingLabelBehavior.always,
+                )),
             TextField(
               onChanged: (value) => _email = value,
               autocorrect: false,
               enableSuggestions: false,
               keyboardType: TextInputType.emailAddress,
               decoration: const InputDecoration(
-                labelText: "Email address",
+                icon: Icon(Icons.email),
+                labelText: "Endereço de Email",
                 floatingLabelBehavior: FloatingLabelBehavior.always,
               ),
             ),
@@ -88,33 +88,35 @@ class _SingupWidgetState extends State<SingupWidget> {
               autocorrect: false,
               enableSuggestions: false,
               decoration: const InputDecoration(
-                labelText: "Password",
+                icon: Icon(Icons.lock),
+                labelText: "Senha",
                 floatingLabelBehavior: FloatingLabelBehavior.always,
               ),
-            ),          
-            const SizedBox(height: 30),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
             Text(
               _msgError,
               style: const TextStyle(
                 color: Colors.red,
                 fontWeight: FontWeight.bold,
-
               ),
             ),
-            const SizedBox(height: 30),
-            Row(              
-              children: [                
-                Expanded(                                 
-                  child: ActionButton(
-                    "Singup",
-                    backgroundColor: const Color(0xFFFF460A),
-                    onPressed: () => doSingup()                                  
-                  ),                                 
+            const SizedBox(
+              height: 30,
+            ),
+            Row(
+              children: [
+                Expanded(
+                  child: ActionButton("Inscrever-se",
+                      backgroundColor: const Color(0xFFFF460A),
+                      onPressed: () => doSingup()),
                 ),
               ],
-            ),                      
+            ),
           ], // children
-        )
+        ),
       ),
     );
   }

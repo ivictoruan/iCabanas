@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class DishButtonWidget extends StatelessWidget {
+class DishButtonDetailsWidget extends StatelessWidget {
   final VoidCallback onPressed;
   final String dishName;
   // late final String _dishImage;
@@ -8,7 +8,7 @@ class DishButtonWidget extends StatelessWidget {
   final String dishPrice;
   final double aspectRatio;
 
-  DishButtonWidget({
+  DishButtonDetailsWidget({
     Key? key,
     required this.dishName,
     required this.dishPrice,

@@ -12,12 +12,13 @@ class ICabannasApp
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: "iCabanãs",
       initialRoute: "/",
       routes:{
         "/":(context) => const GetStartedScreen(),
         "/login":(context) => const LoginScreen(),
-        "/home":(context) => HomeScreen(),
+        "/home":(context) => const HomeScreen(),
       },
       theme: ThemeData(
         

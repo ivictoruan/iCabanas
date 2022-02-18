@@ -6,16 +6,16 @@ class MenuModel extends ChangeNotifier{
 
   List<Dish> initialDishes = [];
 
-  // MenuModel(List<Dish> dishes = const []){
-  //   _menu.addAll(dishes);
+  MenuModel({List<Dish> dishes = const []}){
+    _menu.addAll(dishes);
 
-  // }
+  }
 
-  List<Dish> get menu => List.unmodifiable(_menu);
+  List<Dish> get menu => List.unmodifiable(_menu); // devolve uma referencia nao modificavel
   
   void addDish(Dish dish){
     _menu.add(dish);
-    notifyListeners();
+    notifyListeners(); // método ChangeNotifier
   }
 
 }
