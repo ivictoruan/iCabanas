@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:icabannas/src/core/model/dish.dart';
 import 'package:icabannas/src/core/widgets/dish_button_widget.dart';
-import 'package:icabannas/src/screens/dish_details/dish_details_screen.dart';
+import 'package:icabannas/src/screens/dish_details/details_screen.dart';
 
 class DishesMenuWidget extends StatelessWidget {
   final List<Dish> dataDishes; // lista que recebe os pratos
@@ -11,10 +11,10 @@ class DishesMenuWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     
-    void openDish(Dish dish) { // depois adicionar parametro Dish dish
+    void openDish(Dish dish) { // mudar para openProduct?
       Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (context) => DishDetailsScreen(dish: dish),
+          builder: (context) => DetailsScreen(dish: dish),
         ),
       );
     }

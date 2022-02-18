@@ -6,11 +6,10 @@ class ActionButton extends StatelessWidget {
   final Color backgroundColor;
   final VoidCallback onPressed;
 
-
   const ActionButton(
-    this.text, { 
-    Key? key, 
-    this.foregroundColor = const Color(0xFFF6F6F9), 
+    this.text, {
+    Key? key,
+    this.foregroundColor = const Color(0xFFF6F6F9),
     this.backgroundColor = const Color(0xFFFA4A0C),
     required this.onPressed,
   }) : super(key: key);
@@ -18,19 +17,17 @@ class ActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double _screenWidth = MediaQuery.of(context).size.width;
+    final double _screenHeight = MediaQuery.of(context).size.height;
     return TextButton(
       onPressed: onPressed, // método
-       child: Container(
-         padding: EdgeInsets.symmetric(vertical: 14, horizontal: _screenWidth * 0.25  ),
-         decoration: BoxDecoration( 
-           borderRadius: BorderRadius.circular(15), 
-           color: backgroundColor,          
-           ), 
-         child: Text(
-           text, 
-           style: TextStyle(color: foregroundColor)
-         )
-        ),
+      child: Container(
+          padding: EdgeInsets.symmetric(
+              vertical: _screenHeight * 0.02, horizontal: _screenWidth * 0.28),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(_screenHeight * 0.04)),
+            color: backgroundColor,
+          ),
+          child: Text(text, style: TextStyle(color: foregroundColor))),
     );
   }
 }
