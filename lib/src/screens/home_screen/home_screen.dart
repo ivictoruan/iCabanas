@@ -9,11 +9,8 @@ class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-
-    // final List<Dish> dataDishes = _menuModel.menu;
-
     return DefaultTabController(
-      length: 4,
+      length: 2,
       child: Scaffold(
         backgroundColor: const Color(0xFFF2F2F2),
         resizeToAvoidBottomInset: false,
@@ -29,8 +26,8 @@ class HomeScreen extends StatelessWidget {
           children: [
             HomeTabWidget(),
             FavoriteTabWidget(),
-            ProfileTabWidget(),
-            LastOrdersTabWidget(),
+            // ProfileTabWidget(),
+            // LastOrdersTabWidget(),
           ],
         ),
         bottomNavigationBar: SizedBox(
@@ -56,8 +53,8 @@ class HomeScreen extends StatelessWidget {
               tabs: [
                 Tab(icon: Icon(Icons.home, size: 35)),
                 Tab(icon: Icon(Icons.favorite_border, size: 35)),
-                Tab(icon: Icon(Icons.person_outline, size: 35)),
-                Tab(icon: Icon(Icons.restore, size: 35)),
+                // Tab(icon: Icon(Icons.person_outline, size: 35)),
+                // Tab(icon: Icon(Icons.restore, size: 35)),
               ],
               labelColor: Color(0xFFFA4A0C),
               unselectedLabelColor: Color(0xFFADADAF),

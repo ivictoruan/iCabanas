@@ -52,7 +52,9 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   letterSpacing: 1,
                 ),
               ),
-              const SizedBox(height: 10,),
+              const SizedBox(
+                height: 10,
+              ),
               // PREÇO DO PRODUTO
               Text(
                 widget.dish.dishPrice,
@@ -97,7 +99,12 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 ],
               ),
               const SizedBox(height: 10),
-              Center(child: ActionButton("Add ao Carrinho", onPressed: () {})),
+              Center(
+                child: ActionButton(
+                  "Add ao Carrinho",
+                  onPressed: () {},
+                ),
+              ),
               const SizedBox(height: 20),
             ],
           ),
@@ -106,11 +113,3 @@ class _DetailsScreenState extends State<DetailsScreen> {
     );
   }
 }
-
-// Expanded(
-//                 child: DetailsWidget(
-//                   dishName: widget.dish.dishName,
-//                   dishPrice: widget.dish.dishPrice,
-//                   dishImage: widget.dish.dishImage,
-//                 ),
-//               ),
