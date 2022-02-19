@@ -84,21 +84,21 @@ class DishesMenuWidget extends StatelessWidget {
                         itemCount: dataDishes.length,
                       ),
                       Center(
-                        child: Text("Drinks",
+                        child: Text("Bebidas",
                             style: Theme.of(context)
                                 .textTheme
                                 .headline1
                                 ?.copyWith(color: Colors.black)),
                       ),
                       Center(
-                        child: Text("Snacks",
+                        child: Text("Cafés",
                             style: Theme.of(context)
                                 .textTheme
                                 .headline1
                                 ?.copyWith(color: Colors.black)),
                       ),
                       Center(
-                        child: Text("Sauce",
+                        child: Text("Especiais",
                             style: Theme.of(context)
                                 .textTheme
                                 .headline1

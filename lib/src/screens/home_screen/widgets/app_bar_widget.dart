@@ -3,31 +3,24 @@ import 'package:flutter/services.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   final double maxWidth;
-  final VoidCallback onMenuPressed;
+  // final VoidCallback onMenuPressed;
   final VoidCallback onCartPressed;
 
   const AppBarWidget({
     Key? key,
     required this.maxWidth,
-    required this.onMenuPressed,
+    // required this.onMenuPressed,
     required this.onCartPressed,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      iconTheme: const IconThemeData(color: Colors.black),      
       // deixa a app bar transparente
       backgroundColor: Colors.transparent,
       // some com a sombra (já que não tem elevação)
-      elevation: 0,
-      leading: IconButton(
-        onPressed: onMenuPressed,
-        icon: const Icon(
-          Icons.menu,
-          color: Colors.black,
-        ),
-      ),
-      leadingWidth: maxWidth * 0.28,
+      elevation: 0,   
       actions: [
         SizedBox(
           width: maxWidth * 0.28,

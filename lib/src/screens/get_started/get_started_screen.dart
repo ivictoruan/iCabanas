@@ -34,7 +34,7 @@ class GetStartedScreen extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(16),
                   child: Text(
-                    "Seja bem-vindo!",
+                    "Bem-vindo!",
                     style: Theme.of(context).textTheme.headline1,
                   ),
                 ),
@@ -46,7 +46,7 @@ class GetStartedScreen extends StatelessWidget {
               
               
               Image.asset("assets/images/toy.png", width: screenWidth),
-              
+              const SizedBox(height: 16),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
