@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:icabannas/src/core/model/dish.dart';
-import 'package:icabannas/src/core/model/menu_mode.dart';
+import 'package:icabannas/src/core/model/menu_model.dart';
 import 'package:icabannas/src/icabannas_app.dart';
 import 'package:provider/provider.dart';
+
+import 'src/core/model/dish.dart';
 
 void main() {
   // removida a cor cinza de overlay da status bar do Android
@@ -37,7 +38,7 @@ void main() {
 
   runApp(
     ChangeNotifierProvider(
-      create: (_) => MenuModel(dishes: initialDishes),
+      create: (_) => MenuModel(dishes: initialDishes), // dishes: initialDishes
       child: const ICabannasApp(),
     ),
   );

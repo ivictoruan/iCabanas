@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:icabannas/src/screens/home_screen/tabs/favorite_tab_widget.dart';
-import 'package:icabannas/src/screens/home_screen/tabs/home_tab_widget.dart';
+import 'package:icabannas/src/screens/cart/cart_screen.dart';
+import 'package:icabannas/src/screens/home_screen/tabs/favorites/favorite_tab_widget.dart';
+import 'package:icabannas/src/screens/home_screen/tabs/home/home_tab_widget.dart';
 import 'package:icabannas/src/screens/home_screen/widgets/app_bar_widget.dart';
 import 'package:icabannas/src/screens/navigation_drawer/navigation_drawer.dart';
 
@@ -8,19 +9,24 @@ class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    openCart() {
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => const CartScreen()));
+    }
+
     return DefaultTabController(
       length: 2,
       child: Scaffold(
         drawer: const NavigationDrawer(),
         //não seria melhor utilziar o parametro drawer do scaffold?
-        // backgroundColor: const Color(0xFFF2F2F2),
+        backgroundColor: const Color(0xFFF2F2F2),
         resizeToAvoidBottomInset: false,
         // faz com que o corpo da tela ocupe o espaço da app bar também
         // extendBodyBehindAppBar: true,
-        appBar: AppBarWidget(          
+        appBar: AppBarWidget(
           maxWidth: MediaQuery.of(context).size.width,
-          // onMenuPressed: () => debugPrint("shit menu"),          
-          onCartPressed: () => debugPrint('Cart'),
+          // onMenuPressed: () => debugPrint("shit menu"),
+          onCartPressed: () => openCart(),
         ),
         body: const TabBarView(
           children: [
@@ -31,8 +37,8 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
         bottomNavigationBar: SizedBox(
-          width: MediaQuery.of(context).size.width * 0.7,
-          height: MediaQuery.of(context).size.width * 0.2,
+          width: MediaQuery.of(context).size.width * 0.5,
+          height: MediaQuery.of(context).size.width * 0.15,
           child: Theme(
             data: ThemeData(
               splashColor: Colors.transparent,

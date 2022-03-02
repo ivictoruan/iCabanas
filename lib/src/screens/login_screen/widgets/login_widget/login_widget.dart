@@ -46,9 +46,7 @@ class _LoginWidgetState extends State<LoginWidget> {
     if (_controller.login(_email, _password)) {
       setState(() {
         _msgError = "";
-      });
-
-      // print("Login was realized with success");
+      });      
       Navigator.pushReplacementNamed(context, "/home");
     } else {
       setState(() {
@@ -67,7 +65,7 @@ class _LoginWidgetState extends State<LoginWidget> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start, // isto é necessário?
             children: [
-              TextField(
+              TextFormField(                
                 onChanged: (value) => _email = value,
                 autocorrect: false,
                 enableSuggestions: false,
@@ -75,10 +73,11 @@ class _LoginWidgetState extends State<LoginWidget> {
                 decoration: const InputDecoration(
                   icon: Icon(Icons.email),
                   labelText: "Endereço de Email ",
-                  floatingLabelBehavior: FloatingLabelBehavior.always,
+                  floatingLabelBehavior: FloatingLabelBehavior.always,                                    
                 ),
+                // initialValue: "a", fins de debug
               ),
-              TextField(
+              TextFormField(
                 onChanged: (value) => _password = value,
                 obscureText: true,
                 autocorrect: false,
@@ -88,6 +87,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                   labelText: "Senha",
                   floatingLabelBehavior: FloatingLabelBehavior.always,
                 ),
+                // initialValue: "a"
               ),
               const SizedBox(
                 height: 5,

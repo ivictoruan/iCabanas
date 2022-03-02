@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:icabannas/src/core/model/dish.dart';
 import 'package:icabannas/src/core/widgets/action_button.dart';
-import 'package:icabannas/src/screens/dish_details/widgets/dish_app_bar_widget.dart';
+import 'package:icabannas/src/screens/dish_details/widgets/standard_app_bar_widget.dart';
 
 class DetailsScreen extends StatefulWidget {
   // não seria melhor generalizar a classe e fazer uma de produto?
@@ -21,8 +21,11 @@ class _DetailsScreenState extends State<DetailsScreen> {
     double _maxWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      appBar: DishAppBarWidget(
+      appBar: StandardAppBarWidget(
         maxWidth: _maxWidth,
+        icon: const Icon(
+          Icons.favorite_outline_rounded,
+        ),
       ),
       body: SafeArea(
         child: Container(
@@ -98,14 +101,14 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   ),
                 ],
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 15),
               Center(
                 child: ActionButton(
                   "Add ao Carrinho",
                   onPressed: () {},
                 ),
               ),
-              const SizedBox(height: 20),
+              // const SizedBox(height: 20),
             ],
           ),
         ),

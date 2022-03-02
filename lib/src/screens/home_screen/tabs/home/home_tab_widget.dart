@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:icabannas/src/core/model/dish.dart';
-import 'package:icabannas/src/core/model/menu_mode.dart';
+import 'package:icabannas/src/core/model/menu_model.dart';
 import 'package:icabannas/src/screens/home_screen/widgets/dishes_menu_widget.dart';
 import 'package:icabannas/src/screens/home_screen/widgets/search_field_widget.dart';
 import 'package:provider/provider.dart';
@@ -16,28 +15,26 @@ class HomeTabWidget extends StatefulWidget {
 
 class _HomeTabWidgetState extends State<HomeTabWidget> {
   final TextEditingController _searchController = TextEditingController();
-  List<Dish> _filteredDishes = [];
+  bool loading = false;
 
   @override
   void initState() {
     super.initState();
 
+    // if(){}
+
     final MenuModel _menuModel = Provider.of<MenuModel>(context, listen: false);
-    _filteredDishes = [..._menuModel.menu];
 
     _searchController.addListener(() {
       if (_searchController.text.isEmpty) {
         setState(() {
           // Se não há texto, não filtra
-          _filteredDishes = [..._menuModel.menu];
+          _menuModel.filterMenu("");
         });
-      } else {  
+      } else {
         setState(() {
-          _filteredDishes = _menuModel.menu
-          .where((dish) => dish.dishName
-              .toLowerCase()
-              .contains(_searchController.text.toLowerCase()))
-              .toList();
+          // Se há texto, filtra
+          _menuModel.filterMenu(_searchController.text);
         });
       }
     });
@@ -46,7 +43,11 @@ class _HomeTabWidgetState extends State<HomeTabWidget> {
   @override
   Widget build(BuildContext context) {
     final _maxWidth = MediaQuery.of(context).size.width;
-    
+
+    if(loading==true){
+      return const Center(child: CircularProgressIndicator());
+    }
+
     return Padding(
       padding: EdgeInsets.only(
         left: _maxWidth * 0.1,
@@ -65,11 +66,11 @@ class _HomeTabWidgetState extends State<HomeTabWidget> {
                   height: 1.2,
                 ),
           ),
-          SearchFieldWidget(searchControler: _searchController,),
-          Expanded(
-            child: DishesMenuWidget(
-              dataDishes: _filteredDishes,
-            ),
+          SearchFieldWidget(
+            searchControler: _searchController,
+          ),
+          const Expanded(
+            child: DishesMenuWidget(),
           ),
         ],
       ),

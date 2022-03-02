@@ -16,7 +16,6 @@ class SearchFieldWidget extends StatelessWidget {
       ),
       decoration: const ShapeDecoration(
         color: Color(0xFFEFEEEE),
-
         shape: StadiumBorder(
           side: BorderSide(
             color: Color(0xFFEFEFEF),
@@ -25,14 +24,15 @@ class SearchFieldWidget extends StatelessWidget {
           ),
         ),
       ),      
-      child: TextField(
+      child: TextFormField(        
         controller: searchControler,
         decoration: InputDecoration(
           icon: Icon(
             Icons.search,color: const Color(0xFF000000),
             size: _maxWidth * 0.07,
           ),
-        ),
+        hintText: "Pesquisar delícias",
+        ),        
       ),
       
     );

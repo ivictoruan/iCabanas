@@ -27,10 +27,11 @@ class ICabannasApp
         textTheme: const TextTheme(
           headline1: TextStyle(
             fontFamily: "SFPro",
-            fontSize: 50,
-            height: 1,
+            fontSize: 63,
+            height: 0.75,
             fontWeight: FontWeight.w800,
-            color: Color(0xFFF6F6F9)
+            color: Color(0xFFF6F6F9),
+            letterSpacing: 0.9,            
           ),
           button: TextStyle(
             fontFamily: "SFPro",

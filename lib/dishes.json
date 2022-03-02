@@ -1,0 +1,25 @@
+
+{
+    "dishes": [
+        {
+          "dishName": "Veggie tomato mix",
+          "dishPrice": "97,00",
+          "dishImage": "veggie_tomato"
+        },
+        {
+          "dishName": "Egg and cucumber",
+          "dishPrice": "R$ 143,00",
+          "dishImage": "egg_cucmber"
+        },
+        {
+          "dishName": "Fried Chicken m.",
+          "dishPrice": "R$ 42,50",
+          "dishImage": "fried_chicken"
+        },
+        {
+          "dishName": "Moi-moi and ekpa.",
+          "dishPrice": "R$ 220,00",
+          "dishImage": "moimoi"
+        }
+    ]
+}

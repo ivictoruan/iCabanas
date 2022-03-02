@@ -5,13 +5,13 @@ class NavigationDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List _list = [
-      {"Perfil": "Icon(Icons.person_outline)"},
-      {"Pedidos": "Icon(Icons.person_outline)"},
-      {"Ofertas e promoções": "Icon(Icons.person_outline)"},
-      {"Politica de Privacidade": "Icon(Icons.person_outline)"},
-      {"Segurança": "Icon(Icons.person_outline)"},
-    ];
+    // List _list = [
+    //   {"Perfil": "Icon(Icons.person_outline)"},
+    //   {"Pedidos": "Icon(Icons.person_outline)"},
+    //   {"Ofertas e promoções": "Icon(Icons.person_outline)"},
+    //   {"Politica de Privacidade": "Icon(Icons.person_outline)"},
+    //   {"Segurança": "Icon(Icons.person_outline)"},
+    // ];
     return Drawer(
       backgroundColor: const Color(0xFFFA4A0C),
       // child: ListView.separated(
@@ -39,17 +39,16 @@ class NavigationDrawer extends StatelessWidget {
       //   },
       // ),
       child: ListView(
-        children: const [
-          DrawerHeader(
+        children: [
+          const DrawerHeader(
             child: Text(""), // para demarcar o espaço de começo
           ),
           ListTile(
-            leading: Icon(
+            leading: const Icon(
               Icons.person_pin,
               color: Colors.white,
-              size: 32,
             ),
-            title: Text(
+            title: const Text(
               "Perfil",
               style: TextStyle(
                 fontSize: 17,
@@ -57,19 +56,20 @@ class NavigationDrawer extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
+            onTap: (){},
           ),
-          Divider(
+          const Divider(
             color: Color(0xFFF4F4F8),
             thickness: 0.8,
             indent: 30,
             endIndent: 100,
           ),
           ListTile(
-            leading: Icon(
+            leading: const Icon(
               Icons.shopping_bag_outlined,
               color: Colors.white,
             ),
-            title: Text(
+            title: const Text(
               "Pedidos",
               style: TextStyle(
                 fontSize: 17,
@@ -77,19 +77,20 @@ class NavigationDrawer extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
+            onTap: (){},
           ),
-          Divider(
+          const Divider(
             color: Color(0xFFF4F4F8),
             thickness: 0.8,
             indent: 30,
             endIndent: 100,
           ),
           ListTile(
-            leading: Icon(
+            leading: const Icon(
               Icons.local_offer,
               color: Colors.white,
             ),
-            title: Text(
+            title: const Text(
               "Ofertas e promoções",
               style: TextStyle(
                 fontSize: 17,
@@ -97,19 +98,20 @@ class NavigationDrawer extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
+            onTap: (){},
           ),
-          Divider(
+          const Divider(
             color: Color(0xFFF4F4F8),
             thickness: 0.8,
             indent: 30,
             endIndent: 100,
           ),
           ListTile(
-            leading: Icon(
+            leading: const Icon(
               Icons.policy_outlined,
               color: Colors.white,
             ),
-            title: Text(
+            title: const Text(
               "Politica de Privacidade",
               style: TextStyle(
                 fontSize: 17,
@@ -117,19 +119,20 @@ class NavigationDrawer extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
+            onTap: (){},
           ),
-          Divider(
+          const Divider(
             color: Color(0xFFF4F4F8),
             thickness: 0.8,
             indent: 30,
             endIndent: 100,
           ),
           ListTile(
-            leading: Icon(
+            leading: const Icon(
               Icons.security_outlined,
               color: Colors.white,
             ),
-            title: Text(
+            title: const Text(
               "Segurança",
               style: TextStyle(
                 fontSize: 17,
@@ -137,8 +140,9 @@ class NavigationDrawer extends StatelessWidget {
                 color: Colors.white,
               ),
             ),
+            onTap: (){},
           ),
-          Divider(
+          const Divider(
             color: Color(0xFFF4F4F8),
             thickness: 0.8,
             indent: 30,

@@ -1,7 +1,7 @@
   import 'package:flutter/material.dart';
 import 'package:icabannas/src/screens/home_screen/home_screen.dart';
 
-import '../../../core/widgets/action_button.dart';
+import '../../../../core/widgets/action_button.dart';
 
 class FavoriteTabWidget extends StatelessWidget {
   const FavoriteTabWidget({Key? key}) : super(key: key);
